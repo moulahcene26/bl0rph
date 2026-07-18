@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 1800" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#9aa0a6" stroke-width="1"/></marker>
+    <marker id="ahr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#e8503a" stroke-width="1"/></marker>
+    <style>
+      text{fill:#3c4043}
+      .box{fill:#fff;stroke:#9aa0a6;stroke-width:1}
+      .red{fill:#fff;stroke:#e8503a;stroke-width:1.2}
+      .t{font-size:11px} .s{font-size:10px} .xs{font-size:9px}
+      .rt{fill:#e8503a} .mut{fill:#9aa0a6}
+      .arr{stroke:#9aa0a6;stroke-width:1.2;fill:none}
+      .arrr{stroke:#e8503a;stroke-width:1.2;fill:none}
+      .lbl{font-size:9px;fill:#9aa0a6}
+    </style>
+  </defs>
+  <rect width="940" height="1800" fill="#ffffff"/>
+
+  <!-- ================= MAIN SPINE (cx=230) ================= -->
+  <path d="M230 88  L230 118" class="arr"  marker-end="url(#ah)"/>
+  <path d="M230 160 L230 190" class="arr"  marker-end="url(#ah)"/>
+  <path d="M230 232 L230 262" class="arrr" marker-end="url(#ahr)"/>
+  <text x="238" y="250" class="lbl">error names it</text>
+  <path d="M230 304 L230 334" class="arrr" marker-end="url(#ahr)"/>
+  <path d="M230 376 L230 406" class="arr"  marker-end="url(#ah)"/>
+  <path d="M230 448 L230 478" class="arr"  marker-end="url(#ah)"/>
+  <path d="M230 520 L230 550" class="arrr" marker-end="url(#ahr)"/>
+  <text x="238" y="538" class="lbl">abuse the feature</text>
+  <path d="M230 592 L230 622" class="arr"  marker-end="url(#ah)"/>
+  <path d="M230 664 L230 694" class="arr"  marker-end="url(#ah)"/>
+  <text x="238" y="682" class="lbl">upload</text>
+  <path d="M230 736 L230 766" class="arrr" marker-end="url(#ahr)"/>
+  <text x="238" y="754" class="lbl">bypass</text>
+  <path d="M230 808 L230 838" class="arr"  marker-end="url(#ah)"/>
+  <path d="M230 880 L230 910" class="arrr" marker-end="url(#ahr)"/>
+  <path d="M230 952 L230 982" class="arr"  marker-end="url(#ah)"/>
+  <text x="238" y="970" class="lbl">as pixels</text>
+  <path d="M230 1024 L230 1054" class="arr" marker-end="url(#ah)"/>
+  <path d="M230 1096 L230 1126" class="arr" marker-end="url(#ah)"/>
+  <path d="M230 1168 L230 1198" class="arr" marker-end="url(#ah)"/>
+
+  <rect x="70" y="46"   width="320" height="42" rx="5" class="box"/><text x="230" y="72"   text-anchor="middle" class="t">change my avatar  (large image)</text>
+  <rect x="70" y="118"  width="320" height="42" rx="5" class="box"/><text x="230" y="144"  text-anchor="middle" class="t">image gets resized → image processing</text>
+  <rect x="70" y="190"  width="320" height="42" rx="5" class="box"/><text x="230" y="216"  text-anchor="middle" class="t">garbage as pfp → VipsForeignLoad error</text>
+  <rect x="70" y="262"  width="320" height="42" rx="5" class="red"/><text x="230" y="288"  text-anchor="middle" class="t rt">libvips</text>
+  <rect x="70" y="334"  width="320" height="42" rx="5" class="red"/><text x="230" y="360"  text-anchor="middle" class="t rt">untrusted loader: matload</text>
+  <rect x="70" y="406"  width="320" height="42" rx="5" class="box"/><text x="230" y="432"  text-anchor="middle" class="t">matload loads .mat  =  HDF5</text>
+  <rect x="70" y="478"  width="320" height="42" rx="5" class="red"/><text x="230" y="504"  text-anchor="middle" class="t rt">HDF5 external storage</text>
+  <rect x="70" y="550"  width="320" height="42" rx="5" class="box"/><text x="230" y="568"  text-anchor="middle" class="s">c generator → poison.mat</text><text x="230" y="583" text-anchor="middle" class="xs mut">ext path = /proc/1/environ</text>
+  <rect x="70" y="622"  width="320" height="42" rx="5" class="box"/><text x="230" y="648"  text-anchor="middle" class="t">upload poison.mat as pfp</text>
+  <rect x="70" y="694"  width="320" height="42" rx="5" class="box"/><text x="230" y="720"  text-anchor="middle" class="s mut">rejected — must be an image type</text>
+  <rect x="70" y="766"  width="320" height="42" rx="5" class="red"/><text x="230" y="792"  text-anchor="middle" class="t rt">flip Content-Type: image/png</text>
+  <rect x="70" y="838"  width="320" height="42" rx="5" class="box"/><text x="230" y="864"  text-anchor="middle" class="t">processed by matload in libvips</text>
+  <rect x="70" y="910"  width="320" height="42" rx="5" class="red"/><text x="230" y="936"  text-anchor="middle" class="t rt">reads external file /proc/1/environ</text>
+  <rect x="70" y="982"  width="320" height="42" rx="5" class="box"/><text x="230" y="1008" text-anchor="middle" class="t">returned as bytes → rendered as pixels</text>
+  <rect x="70" y="1054" width="320" height="42" rx="5" class="box"/><text x="230" y="1080" text-anchor="middle" class="t">my avatar  =  /proc/1/environ</text>
+  <rect x="70" y="1126" width="320" height="42" rx="5" class="box"/><text x="230" y="1145" text-anchor="middle" class="s">decode the picture</text><text x="230" y="1160" text-anchor="middle" class="xs mut">center px/block → bytes → split \0</text>
+  <rect x="70" y="1198" width="320" height="42" rx="5" class="red"/><text x="230" y="1224" text-anchor="middle" class="t rt">secrets recovered</text>
+
+  <!-- ============ FAN-OUT to the recovered secrets (right column) ============ -->
+  <path d="M390 1215 L516 1320" class="arrr" marker-end="url(#ahr)"/>
+  <path d="M390 1219 L516 1380" class="arrr" marker-end="url(#ahr)"/>
+  <path d="M390 1223 L516 1440" class="arr"  marker-end="url(#ah)"/>
+  <path d="M390 1227 L516 1500" class="arr"  marker-end="url(#ah)"/>
+  <rect x="518" y="1300" width="360" height="40" rx="5" class="red"/><text x="698" y="1325" text-anchor="middle" class="s rt">AWS_ROLE_ARN</text>
+  <rect x="518" y="1360" width="360" height="40" rx="5" class="red"/><text x="698" y="1385" text-anchor="middle" class="s rt">AWS_WEB_IDENTITY_TOKEN_FILE (a path)</text>
+  <rect x="518" y="1420" width="360" height="40" rx="5" class="box"/><text x="698" y="1445" text-anchor="middle" class="s">DATABASE_URL</text>
+  <rect x="518" y="1480" width="360" height="40" rx="5" class="box"/><text x="698" y="1505" text-anchor="middle" class="s">GITHUB_TOKEN</text>
+
+  <!-- ============ ESCALATION (left column, cx=230) ============ -->
+  <!-- token path feeds the token read -->
+  <path d="M518 1380 L392 1380" class="arr" marker-end="url(#ah)"/>
+  <text x="398" y="1373" class="lbl">it's a path → read it too</text>
+  <rect x="70" y="1360" width="320" height="40" rx="5" class="box"/><text x="230" y="1385" text-anchor="middle" class="s">read token file (same trick)</text>
+  <path d="M230 1400 L230 1430" class="arr" marker-end="url(#ah)"/>
+  <rect x="70" y="1430" width="320" height="40" rx="5" class="box"/><text x="230" y="1455" text-anchor="middle" class="s">EKS web-identity JWT</text>
+  <path d="M230 1470 L230 1500" class="arr" marker-end="url(#ah)"/>
+  <text x="238" y="1490" class="lbl">token</text>
+
+  <!-- role arn feeds STS from the right, routed clear of the secret boxes -->
+  <path d="M518 1320 L456 1320 L456 1520 L392 1520" class="arr" marker-end="url(#ah)"/>
+  <text x="462" y="1440" class="lbl">role</text>
+
+  <rect x="70" y="1500" width="320" height="40" rx="5" class="box"/><text x="230" y="1525" text-anchor="middle" class="s">STS AssumeRoleWithWebIdentity</text>
+  <path d="M230 1540 L230 1570" class="arr" marker-end="url(#ah)"/>
+  <rect x="70" y="1570" width="320" height="40" rx="5" class="box"/><text x="230" y="1595" text-anchor="middle" class="s">temp creds → prod AWS principal</text>
+  <path d="M230 1610 L230 1640" class="arr" marker-end="url(#ah)"/>
+  <rect x="70" y="1640" width="320" height="40" rx="5" class="box"/><text x="230" y="1665" text-anchor="middle" class="s">list S3 → customer-migrations</text>
+  <path d="M230 1680 L230 1710" class="arrr" marker-end="url(#ahr)"/>
+  <rect x="70" y="1710" width="320" height="38" rx="5" class="red"/><text x="230" y="1734" text-anchor="middle" class="s rt">customer records (PII)</text>
+</svg>

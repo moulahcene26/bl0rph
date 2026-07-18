@@ -113,4 +113,11 @@ it gives real customer records, names, emails, account UUIDs, login IPs, user ag
 
 
 
+
+\
+\
+\
 sensational...
+
+here's a pretty nice diagram that sums it all
+![](full-chain-tree.svg){width=120%}
