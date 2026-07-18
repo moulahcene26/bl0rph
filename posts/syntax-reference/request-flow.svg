@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 240" font-family="monospace" fill="none">
+  <style>
+    .box { fill: none; stroke: #8a8a8a; stroke-width: 2; }
+    .hl  { stroke: #e5342a; }
+    .lbl { fill: #8a8a8a; font-size: 15px; }
+    .lblhl { fill: #e5342a; font-size: 13px; }
+    .arrow { stroke: #8a8a8a; stroke-width: 2; }
+    .arrowhl { stroke: #e5342a; stroke-width: 2; }
+  </style>
+
+  <!-- client -->
+  <rect class="box" x="20" y="80" width="150" height="70" rx="6"/>
+  <text class="lbl" x="95" y="120" text-anchor="middle">client</text>
+
+  <!-- proxy -->
+  <rect class="box hl" x="335" y="80" width="150" height="70" rx="6"/>
+  <text class="lblhl" x="410" y="112" text-anchor="middle" font-size="15">burp</text>
+  <text class="lblhl" x="410" y="132" text-anchor="middle">tamper</text>
+
+  <!-- server -->
+  <rect class="box" x="650" y="80" width="150" height="70" rx="6"/>
+  <text class="lbl" x="725" y="120" text-anchor="middle">server</text>
+
+  <!-- arrows -->
+  <line class="arrow" x1="170" y1="115" x2="325" y2="115"/>
+  <polygon points="325,115 313,109 313,121" fill="#8a8a8a"/>
+
+  <line class="arrowhl" x1="485" y1="115" x2="640" y2="115"/>
+  <polygon points="640,115 628,109 628,121" fill="#e5342a"/>
+
+  <!-- header label on the tampered leg -->
+  <text class="lblhl" x="562" y="95" text-anchor="middle">X-Original-URL: /admin</text>
+  <text class="lbl" x="247" y="95" text-anchor="middle" font-size="13">GET /me</text>
+</svg>
